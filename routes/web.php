@@ -16,6 +16,32 @@ use App\Http\Controllers\BlogController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// user
+Route::get("/usejeq", function () {
+  return view("frontend.index");
+})->name('index');
+
+Route::get("/usejeq/add", function () {
+  return view("frontend.add");
+})->name('add');
+
+Route::get("/usejeq/detail/{id}", function () {
+  return view("frontend.show");
+})->name('detail');
+
+// produk
+Route::get("/usejeq/products", function () {
+  return view("produk.index");
+})->name('index');
+
+Route::get("/usejeq/product/create", function () {
+  return view("produk.add");
+})->name('add');
+
+Route::get("/usejeq/products/{id}", function () {
+  return view("produk.show");
+})->name('detail');
+
 
 Route::get('/', function () {
         $produk = TableProduct::paginate(10);

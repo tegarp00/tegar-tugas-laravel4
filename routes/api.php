@@ -21,6 +21,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// ajax
+Route::post("/pengguna/{id}", [PenggunaController::class, "destroy"]);
+Route::post("/pengguna/{id}", [PenggunaController::class, 'update']);
+// produk
+Route::post("/product/{id}", [ProductController::class, 'update']);
+Route::post("/product/{id}", [ProductController::class, 'destroy']);
+
 // user
 Route::get("/pengguna/list", [PenggunaController::class, 'index']);
 Route::get("/pengguna/{id}", [PenggunaController::class, 'show']);
